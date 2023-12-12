@@ -1,6 +1,17 @@
 import { createGlobalStyle } from "styled-components";
+import { Open_Sans, Roboto } from "next/font/google";
+
+const openSans = Open_Sans({ subsets: ["latin"] });
+
+const roboto = Roboto({ subsets: ["latin"], weight: "500" });
 
 export default createGlobalStyle`
+
+  @font-face {
+    font-family: 'Rubik Bubbles';
+    src: url(./RubikBubbles-Regular.ttf);
+  }
+
   *, 
   *::before,
   *::after {
@@ -15,7 +26,12 @@ export default createGlobalStyle`
 
   body {
     margin: 0;
-    font-family: system-ui;
+    font-family: ${roboto.style.fontFamily};
     padding: 2rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
   }
 `;
